@@ -1,0 +1,269 @@
+body {
+	min-height: 100%;
+}
+
+.moon {
+	background: url(../img/bg.jpg) 0 0/cover no-repeat;
+	width: 1000px;
+	height: 800px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.moon__image::before {
+	content: '';
+	display: inline-block;
+	background: url('../img/moon.png') 0 0/cover no-repeat;
+	width: 150px;
+	height: 150px;
+	position: relative;
+	overflow: hidden;
+	top: 338px;
+	left: 0px;
+	z-index: 2;
+	animation: moon 10s linear infinite;
+}
+
+.moon__image:hover::before{
+	animation-play-state: paused;
+	}
+
+@keyframes moon{
+	0% {
+	left: 0;
+	}
+	100% {
+	left: 978px;
+	top: 150px;
+	}
+}
+
+.moon__star1::before {
+	content: '';
+	display: inline-block;
+	background: url('../img/star.png') 0 0/cover no-repeat;
+	width: 65px;
+	height: 30px;
+	position: relative;
+	left: -50px;
+	top: -113px;
+	animation-name: moon-tar1;
+	animation: moon-star1 2s linear 1;
+	}
+
+	
+@keyframes moon-star1{
+
+	0%{
+		left: -50px;
+	}
+	100%{
+		left: 323px;
+		top: 187px;
+	}
+	}
+
+.moon__star2::before {
+	content: '';
+	display: inline-block;
+	background: url('../img/star.png') 0 0/cover no-repeat;
+	width: 65px;
+	height: 30px;
+	position: relative;
+	left: 502px;
+	top: -214px;
+	animation-name: moon-star2;
+	animation: moon-star2 1s linear 1 4s;
+	}
+	
+		
+@keyframes moon-star2{
+
+	0%{
+		left: 502px;
+	}
+	100%{
+		left: 338px;
+		top: 108px;
+	}
+	}
+
+.moon__star3::before {
+	content: '';
+	display: inline-block;
+	background: url('../img/star.png') 0 0/cover no-repeat;
+	width: 65px;
+	height: 30px;
+	position: relative;
+	left: 623px;
+	top: -243px;
+	animation-name: moon-star3;
+	animation: moon-star3 1s linear 1 8s;
+	}
+		
+			
+@keyframes moon-star3{
+
+	0%{
+		left: 623px;
+	}
+	100%{
+		left: 921px;
+		top: 102px;
+	}
+	}
+
+.wrap {
+	height: 450px;
+	background: #000;
+}
+
+.circle {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: #B9FAF8;
+	display: inline-block;
+	position: relative;
+	top: 84px;
+	left: 485px;
+	animation-name: circle;
+	animation: circle 5s linear infinite alternate;
+}
+
+@keyframes circle{
+	0%{
+		width: 100px;
+		height: 100px;
+	}
+	50%{
+		width: 100px;
+		height: 300px;
+		border-radius: 10px;
+	}
+	100%{
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+	background: #6F2DBD;
+	}
+}
+
+@keyframes cube{
+	0%{
+	width: 300px;
+	height: 300px;
+	}
+	100%{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: #B9FAF8;
+	}
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	background: #111;
+}
+
+.container .ring {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 4px solid transparent;
+	display: inline-block;
+	left: 485px;
+	top: 190px;
+	border-top: 4px solid #bfff38;
+	animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.container .ring::before {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	top: 12px;
+	right: 12px;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	background: #bfff38;
+	box-shadow: 0 0 0 5px #c0ff38bf,
+	0 0 0 10px #c0ff3899,
+	0 0 0 20px #c0ff388b,
+	0 0 20px #c0ff3844,
+	0 0 50px #c0ff3821;
+}
+
+.container .ring:nth-child(2) {
+	animation: animate2 4s linear infinite;
+	animation-delay: -1s;
+	border-top: 4px solid transparent;
+	border-left: 4px solid #38cfff;
+}
+@keyframes animate2 {
+	0%{
+		transform: rotate(360deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
+
+.container .ring:nth-child(2)::before {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	top: initial;
+	bottom: 12px;
+	left: 12px;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	background: #38cfff;
+	box-shadow: 0 0 0 5px #38d1ffdb,
+	0 0 0 10px #38d1ffa1,
+	0 0 0 20px #38d1ff7d,
+	0 0 20px #38d1ff3c,
+	0 0 50px #38d1ff25;
+}
+.container .ring:nth-child(3) {
+	position: absolute;
+	top: 111.34px;
+	left: 558px;
+	animation: animate2 4s linear infinite;
+	animation-delay: -3s;
+	border-top: 4px solid transparent;
+	border-left: 4px solid #f638ff;
+}
+.container .ring:nth-child(3)::before {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	top: initial;
+	bottom: 12px;
+	left: 12px;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	background: #f638ff;
+	box-shadow: 0 0 0 5px #f538ffb9,
+	0 0 0 10px #f538ff94,
+	0 0 0 20px #f538ff66,
+	0 0 20px #f538ff48,
+	0 0 50px #f538ff1f;
+}
+
